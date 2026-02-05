@@ -31,6 +31,7 @@ The following table lists the components used in the prototype, including quanti
 | 5 | 3-D Printed Grippers, Gears, Connector Rods, and Fasteners | 20 | PLA | 10.00 | In-House | FDM-printed |
 | 6 | Wiring & Connectors | - | Copper/Plastic | 5.00 | Arduino Kit | Male to Female and Male to Male |
 
+### 
 ## Arduino Gripper Actuation Controller Code
 ```cpp
 #include <AccelStepper.h>
