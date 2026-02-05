@@ -15,7 +15,7 @@ main-image: /RoboticGripperMainImage.png
 
 ---
 # ADDITIONAL DETAILS
-### 
+<div style="height: 2rem;"></div>
 ## Problem Statement
 Manual or semi-automated grippers often suffer from limited precision and repeatability in object handling, particularly when dealing with delicate or irregularly shaped parts. Achieving reliable grasping with consistent force and accurate positioning requires a design that integrates **mechanical leverage, controlled actuation, and embedded sensing.** Without such a system, object handling tasks are prone to human error, inconsistent motion, and potential damage to parts, highlighting the need for a compact, reliable, and programmable robotic gripper.
 
