@@ -2,6 +2,7 @@
 layout: post
 title: Robotic Gripper
 description:  Designed and manufactured a robotic gripper using Fusion 360, integrating a geared mechanical transmission and 3D-printed components. The system is actuated via an Arduino-controlled motor driver, allowing precise motion control for grasping and releasing objects. This project demonstrates the intersection of mechanical design, embedded electronics, and control programming in a compact robotic subsystem. The design was inspired by observing larger, high-precision, industrial-grade grippers at a robotics conference, motivating a cost-effective, scaled-down version.
+<div style="height: 1rem;"></div>
 skills: 
 - Mechanical design (Fusion 360)
 - 3D printing and prototyping
@@ -19,6 +20,8 @@ main-image: /RoboticGripperMainImage.png
 ## Problem Statement
 Manual or semi-automated grippers often suffer from limited precision and repeatability in object handling, particularly when dealing with delicate or irregularly shaped parts. Achieving reliable grasping with consistent force and accurate positioning requires a design that integrates **mechanical leverage, controlled actuation, and embedded sensing.** Without such a system, object handling tasks are prone to human error, inconsistent motion, and potential damage to parts, highlighting the need for a compact, reliable, and programmable robotic gripper.
 
+<div style="height: 1.25rem;"></div>
+
 ## Bill of Materials (BOM)
 The following table lists the components used in the prototype, including quantities, materials, estimated costs, and suppliers.
 
@@ -31,7 +34,8 @@ The following table lists the components used in the prototype, including quanti
 | 5 | 3-D Printed Grippers, Gears, Connector Rods, and Fasteners | 20 | PLA | 10.00 | In-House | FDM-printed |
 | 6 | Wiring & Connectors | - | Copper/Plastic | 5.00 | Arduino Kit | Male to Female and Male to Male |
 
-### 
+<div style="height: 1.25rem;"></div>
+
 ## Arduino Gripper Actuation Controller Code
 ```cpp
 #include <AccelStepper.h>
