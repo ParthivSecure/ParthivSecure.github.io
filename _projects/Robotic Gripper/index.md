@@ -15,14 +15,14 @@ main-image: /RoboticGripperMainImage.png
 
 ---
 # ADDITIONAL DETAILS
-###
+### 
 ## Problem Statement
 Manual or semi-automated grippers often suffer from limited precision and repeatability in object handling, particularly when dealing with delicate or irregularly shaped parts. Achieving reliable grasping with consistent force and accurate positioning requires a design that integrates **mechanical leverage, controlled actuation, and embedded sensing.** Without such a system, object handling tasks are prone to human error, inconsistent motion, and potential damage to parts, highlighting the need for a compact, reliable, and programmable robotic gripper.
 
 ## Bill of Materials (BOM)
 The following table lists the components used in the prototype, including quantities, materials, estimated costs, and suppliers.
 
-| ITEM | COMPONENT | QTY | MATERIAL | COST ($) | SUPPLIER | NOTES |
+| ITEM | COMPONENT | QTY | MATERIAL | COST($) | SUPPLIER | NOTES |
 |----------|----------|----------|----------|----------|----------|----------|
 | 1 | ULN2003 5V Stepper Motor and ULN2003 Driver Board | 1 | PCB/Metal/Plastic | 17.00 | Arduino Kit | Common stepper driver + motor interface module |
 | 2 | Arduino Uno | 1 | PCB/Plastic | 26.00 | Arduino Kit | Microcontroller for control |
