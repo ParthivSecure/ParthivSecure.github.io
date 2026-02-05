@@ -85,7 +85,7 @@ formspree-key:   xqedzgny
 
 # Active theme (Updatethis to switch themes). Make sure to keep the indentation the samne.
 colors: # this is the basic theme
-  text: "#2c3333"
+  text: "#1a1c20"
   border: "#e0f2ef"
   link: "#40b3a2"
   highlight: "#2a9d8f"
