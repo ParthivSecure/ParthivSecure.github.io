@@ -23,14 +23,14 @@ profile_image: ./assets/images/profile-image/ParthivHeadshot.jpg
 
 # Link your resume
 # You can place your resume in assets/resume/{resume.pdf or add external link such as pdf saved in google drive 
-resume-url: https://drive.google.com/file/d/13Z3duVzh-gguPU5r03oJVEE6rV9rd3DS/view?usp=sharing # or /assets/resume/resume.pdf
+resume-url: /assets/resume/Parthiv_s_Resume.pdf
 
 
 # Set up external links - this will show up as small icons next to your name.
 
 external-links:    # input only your own url slug. The icons with missing entries will not appear.
-  linkedin: test    # https://www.linkedin.com/in/{your url slug} 
-  github: leea12    # https://github.com/{your url slug} 
+  linkedin: parthiv06    # https://www.linkedin.com/in/{your url slug} 
+  github: ParthivSecure    # https://github.com/{your url slug} 
   stackoverflow: test      # https://stackoverflow.com/users/{your url slug}
   medium:            # https://medium.com/@{your url slug} 
   x-twitter:   # https://x.com/{your url slug} 
@@ -45,59 +45,62 @@ external-links:    # input only your own url slug. The icons with missing entrie
 skills:
   - category: 3D Modeling
     tools:
-    - Onshape
     - Solidworks
-    - Creo
     - Fusion 360 (Autodesk)
-    - Blender (for complex shapes or animations)
-    - Siemens NX
-    - Inventor (Autodesk)
-    - CATIA (Dassault Systèmes)
+    - AutoCAD (Autodesk)
   - category: Prototyping
     tools:
-    - SLA
-    - CNC
-    - FDM
-    - SLS
-    - DMLS
-    - PolyJet Printing
-    - Vacuum Casting
-    - Laser Cutting
-    - Water Jet Cutting
-    - Arduino / Raspberry Pi
+    - 3D Printing (FDM & SLA)
+    - CNC Milling & CNC Lathe
+    - Laser Cutting (CO2 & Fiber)
     - Breadboarding for circuit testing
+    - Arduino
+    - Raspberry Pi
+    - PCB Fabrication (Stencil, SMD Soldering, Reflow)
+    - Fusion 360 & SolidWorks (for prototyping brackets
+    - Waterjet Cutting
   - category: Design Standards / Practices
     tools:
-    - GD&T ASME Y14
-    - ISO fits and tolerances
-    - PLM (PTC Windchill / Arena)   
+    - GD&T (ASME Y14)
+    - ASME B.10 (Mechanical Power Transmission / Shafts & Couplings)
+    - ASME B16 (General Valves, Flanges, Piping)
+    - ASME B16.5 (Pipe Flanges and Flanged Fittings)
+    - ASME B16.10 (Face-to-Face and End-to-End Dimensions of Valves)
+    - ASME B16.34 (Valves Flanged, Threaded, and Welding End)
+    - ASME B31.3 (Process Piping Design)
+    - VDI 2221 (Systematic Design of Technical Systems)
+    - VDI 2206 (Design Methodology for Mechatronic Systems)
+    - Agile Methodology
+    - Scrum
+    - Design for Manufacturing (DFM)
+    - Engineering Drawing Standards
   - category: PCB Design
     tools:
     - Altium Designer
-    - Altium
-    - Eagle 
     - KiCad
+    - PCB Milling / Fabrication
+    - SMD Soldering & Reflow
+    - Breadboarding / Circuit Prototyping
   - category: Problem Solving / Risk Management
     tools:
     - Root Cause Analysis (e.g., 5 Whys, Fishbone Diagram)
-    - DFMEA / PFMEA 
-    - Six Sigma methodologies
-    - Shain Red-X
+    - DFMEA / PFMEA
+    - Design for Reliability (DfR)
 
 
 # Contact Form Setup. Setup an account and copy over the key. When someone fills out the form, it will be received in your email.
-formspree-key:   https://formspree.io/f/{8-digit key}
+formspree-key:   https://formspree.io/f/xqedzgny
 
 
 
 # Active theme (Updatethis to switch themes). Make sure to keep the indentation the samne.
 colors: # this is the basic theme
-  text: "#1a1c20"
-  border: "#ddd"
-  link: "#4a76ee"
-  highlight: "#0c0cf2"
-  background: "#ffffff"
-  light_background: "#f3f5fb"
+  text: "#2c3333"
+  border: "#e0f2ef"
+  link: "#40b3a2"
+  highlight: "#2a9d8f"
+  background: "#f7fbfa"
+  light_background: "#f0f9f7"
 
 # A few examples. 
 basic theme:
