@@ -63,13 +63,13 @@ p {
 /* NAVBAR */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: centered;
     padding: 25px 0;
     height: 80px;
     align-items: center;
     position: relative;
 }
-
+/*
 nav .left a {
     color: var(--text-color);
     font-size: 30px;
@@ -85,7 +85,19 @@ nav .right a {
     font-size: 23px;
     margin-left: 30px;
 }
+*/
+/* NEW NAV BAR */
+.desktop-nav {
+    display: flex;
+    gap: 2.5rem;
+}
 
+.desktop-nav a {
+    color: var(--text-color);
+    font-size: 23px;
+}
+
+/*
 nav .right a:last-child
  {
     border: 2px solid var(--link-color);
@@ -93,11 +105,20 @@ nav .right a:last-child
     padding: 3px 15px;
     border-radius: 10px;
 }
+*/
+/*  NEW PART */
+.desktop-nav a:last-child {
+    border: 2px solid var(--link-color);
+    color: var(--link-color);
+    padding: 3px 15px;
+    border-radius: 10px;
+}
+
 
 nav .right a:last-child:hover,
 nav .right a span:last-child:hover,
 nav .mobile-nav a:last-child:hover,
-nav .mobile-nav a span:last-child:hover,{
+nav .mobile-nav a span:last-child:hover {  /* rmeoved a comma before the curly bracket */
     color: var(--text-color);
     background-color: var(--light-background-color);
     border-radius: 10px;
@@ -111,6 +132,13 @@ nav .menu-toggle {
     cursor: pointer;
     padding: 10px;
 }
+
+/* New Part */
+nav .menu-toggle {
+    position: absolute;
+    right: 0;
+}
+
 
 nav .hamburger {
     display: block;
