@@ -1,6 +1,6 @@
 # Parthiv Patel — Engineering Portfolio
 
-This is my personal portfolio website showcasing my work in mechatronics, robotics, and electromechanical systems. Website can be found here: [Parthiv's Project Portfolio(https://parthivsecure.github.io/)]
+This is my personal portfolio website showcasing my work in mechatronics, robotics, and electromechanical systems. Website can be found here: [Parthiv's Project Portfolio](https://parthivsecure.github.io/)
 
 ## 🔧 About Me
 I'm a Mechatronics & Robotics Engineering student at the University of Alberta with experience in:
