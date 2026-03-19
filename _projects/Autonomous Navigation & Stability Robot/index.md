@@ -136,7 +136,7 @@ Although the autonomous tasks were not fully completed, I am grateful for the op
 <div style="height: 1.25rem;"></div>
 
 
-## Intertial Measurement Unit (IMU) Code
+## Interial Measurement Unit (IMU) Code
 This Arduino code uses the GY-521 (MPU6050) gyroscope and accelerometer to measure the robot’s tilt and adjust its four DC motors for balance. The system calculates the pitch angle and drives the motors forward or backward if the tilt exceeds a threshold, or stops them when the robot is level. This provides a simple feedback-based stabilization mechanism to keep the robot upright on narrow or uneven surfaces. For best results, the gyroscope should be mounted near the center of the vehicle, and for future improvement, a PID controller could be implemented to achieve smoother and more precise balance control.
 
 ```cpp
