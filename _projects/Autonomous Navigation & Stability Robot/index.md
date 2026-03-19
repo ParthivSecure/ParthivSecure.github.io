@@ -88,11 +88,13 @@ The objective of this project, within the Mechatronics Showdown competition, was
 
 <div style="height: 1.25rem;"></div>
 
+<!--
 ## Wiring Schematic
 
 {% include image-gallery.html images="/AutonomousRobotMainImage.png" height="400" %}
 
 *Note: This schematic was provided as part of the competition materials (Author: Jaspreet Chhabra). It illustrates the intended wiring layout for the robot's motors, sensors, and power system.*
+-->
 
 
 ## Challenges & Debugging
