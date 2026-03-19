@@ -89,6 +89,8 @@ The objective of this project, within the Mechatronics Showdown competition, was
 <div style="height: 1.25rem;"></div>
 
 <!--
+
+update this in the future to include the schematic image
 ## Wiring Schematic
 
 {% include image-gallery.html images="/AutonomousRobotMainImage.png" height="400" %}
