@@ -4,13 +4,13 @@ title: Autonomous Navigation & Stability Robot
 description: Designed and built a sensor-driven robotic vehicle capable of autonomous maze navigation and balance beam traversal as a team during a time-constrained mechatronics competition. Integrated ultrasonic sensing with a servo scanning mechanism for obstacle detection and implemented gyroscope-based stabilization using a GY-521 (MPU6050). This project highlights rapid prototyping, hardware debugging, and real-world system integration under tight constraints.
 skills: 
 - Arduino programming
-- Sensor integration (Ultrasonic, IMU)
+- Sensor integration
 - Embedded systems
 - Hardware prototyping and wiring
-- Motor driver integration (L298N)
+- Motor driver integration
 - Debugging electromechanical systems
-- Rapid prototyping under constraints
-- Control systems (threshold-based logic)
+- Rapid prototyping
+- Control systems
 main-image: /AutonomousRobotMainImage.png
 ---
 
@@ -19,7 +19,7 @@ main-image: /AutonomousRobotMainImage.png
 # ADDITIONAL DETAILS
 <div style="height: 2rem;"></div>
 
-## 🚀 Problem Statement
+## Problem Statement
 
 Autonomous navigation is a fundamental challenge in robotics, requiring a system to perceive its environment, make real-time decisions, and execute precise control without human intervention. This becomes increasingly complex in constrained environments such as mazes or narrow pathways, where limited sensing, tight clearances, and dynamic conditions demand robust and efficient solutions.
 
@@ -27,20 +27,13 @@ In addition to navigation, maintaining stability on uneven or narrow surfaces in
 
 <div style="height: 1.25rem;"></div>
 
-## 🎯 Objectives
+## Objectives
 
-The objective of this project, within the Mechatronics Showdown competition, was to design and develop a mobile robotic system capable of:
-
-- **Autonomous maze navigation** using onboard sensors and real-time decision-making  
-- **Directional environment sensing** to detect and respond to obstacles effectively  
-- **Balance beam traversal** using gyroscopic feedback for stability control  
-- **Reliable system integration** under strict time constraints and limited resources  
-
-The system needed to be robust enough to operate in a competitive setting while being rapidly prototyped and iterated within a short development window of two days.
+The objective of this project, within the Mechatronics Showdown competition, was to design and develop a mobile robotic system capable of **Autonomous maze navigation** using onboard sensors and real-time decision-making, **Directional environment sensing** to detect and respond to obstacles effectively, **Balance beam traversal** using gyroscopic feedback for stability control, and **Reliable system integration** under strict time constraints and limited resources. The system needed to be robust enough to operate in a competitive setting while being rapidly prototyped and iterated within a short development window of two days.
 
 <div style="height: 1.25rem;"></div>
 
-## 🧠 My Contributions
+## My Contributions
 - Designed and implemented **full hardware layout and wiring**
 - Mounted and integrated all sensors and electronic components  
 - Developed **servo-based ultrasonic scanning mechanism**  
@@ -49,13 +42,9 @@ The system needed to be robust enough to operate in a competitive setting while 
 
 <div style="height: 1.25rem;"></div>
 
-## ⚙️ Navigation Strategy
-The robot used a **dynamic scanning approach** for decision-making:
-
-- Ultrasonic sensor mounted on a **servo motor** to scan:
-  - Forward  
-  - Right  
-  - Left  
+## Navigation Strategy
+### Scanning Method:
+- Ultrasonic sensor mounted on a servo motor to scan forward, right, and left
 
 ### Decision Logic:
 - If obstacle detected ahead → scan right  
@@ -70,14 +59,14 @@ The robot used a **dynamic scanning approach** for decision-making:
 
 <div style="height: 1.25rem;"></div>
 
-## ⚖️ Balance System
+## Balance System
 - Used **GY-521 (MPU6050)** gyroscope for tilt detection  
-- Implemented threshold-based corrections  
-- Adjusted motor outputs to maintain stability on beam  
+- Calculated beam angle with the IMU feedback
+- Adjusted motor outputs to maintain a central position on the beam 
 
 <div style="height: 1.25rem;"></div>
 
-## 🛠️ Bill of Materials (BOM)
+## Bill of Materials (BOM)
 
 | ITEM | COMPONENT | QTY | NOTES |
 |----------|----------|----------|----------|
@@ -99,14 +88,14 @@ The robot used a **dynamic scanning approach** for decision-making:
 
 <div style="height: 1.25rem;"></div>
 
-## 📐 Wiring Schematic
+## Wiring Schematic
 
-{% include image-gallery.html images="_projects/Autonomous%20Navigation%20&%20Stability%20Robot/starter_code_schematic.png" height="400" %}
+{% include image-gallery.html images="/starter_code_schematic.png" height="400" %}
 
 *Note: This schematic was provided as part of the competition materials (Author: Jaspreet Chhabra). It illustrates the intended wiring layout for the robot's motors, sensors, and power system.*
 
 
-## ⚠️ Challenges & Debugging
+## Challenges & Debugging
 This project involved significant real-world hardware challenges:
 
 - **Power system issue**
@@ -126,7 +115,7 @@ These challenges emphasized the importance of **hardware validation, power syste
 
 <div style="height: 1.25rem;"></div>
 
-## 🧪 Results
+## Results
 - Navigation logic fully implemented and partially validated  
 - Balance control system developed but not fully tuned  
 - Robot performed reliably under **manual control**  
