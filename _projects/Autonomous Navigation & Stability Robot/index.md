@@ -135,5 +135,137 @@ Although the autonomous tasks were not fully completed, I am grateful for the op
 
 <div style="height: 1.25rem;"></div>
 
-## 💻 Example Control Logic
+
+## Intertial Measurement Unit Code
+This Arduino code uses the GY-521 (MPU6050) gyroscope and accelerometer to measure the robot’s tilt and adjust its four DC motors for balance. The system calculates the pitch angle and drives the motors forward or backward if the tilt exceeds a threshold, or stops them when the robot is level. This provides a simple feedback-based stabilization mechanism to keep the robot upright on narrow or uneven surfaces. For best results, the gyroscope should be mounted near the center of the vehicle, and for future improvement, a PID controller could be implemented to achieve smoother and more precise balance control.
+
+```cpp
+#include <Wire.h>
+#include <MPU6050.h>
+
+MPU6050 mpu; // creates an object called mpu which represents the physical MPU6050 sensor
+
+// Motor pins
+#define back_left_enable 7
+#define back_left_1 6
+#define back_left_2 5
+#define back_right_enable 2
+#define back_right_1 4
+#define back_right_2 3
+#define front_right_enable 8
+#define front_right_1 9
+#define front_right_2 10
+#define front_left_enable 13
+#define front_left_1 11
+#define front_left_2 12
+
+// Adjustable stop angle (deadzone)
+float cutAngle = 10;     // ±cutAngle around deadzoneCenter stops motors
+float deadzoneCenter = -3; // measured pitch when level
+
+void setup() {
+  Serial.begin(115200);   // lets the Arduino send text to the Serial Monitor for debugging
+  Wire.begin();   // Starts the I2C bus used by the MPU6050
+
+  mpu.initialize();   //tells the MPU6050 to start operating
+  //Checks if sensor is connected
+  if (mpu.testConnection()) { 
+    Serial.println("MPU6050 connected!");
+  } else {
+    Serial.println("MPU6050 connection failed!");
+  }
+
+  // Set motor pins as outputs
+  pinMode(back_left_enable, OUTPUT);
+  pinMode(back_left_1, OUTPUT);
+  pinMode(back_left_2, OUTPUT);
+  pinMode(back_right_enable, OUTPUT);
+  pinMode(back_right_1, OUTPUT);
+  pinMode(back_right_2, OUTPUT);
+  pinMode(front_left_enable, OUTPUT);
+  pinMode(front_left_1, OUTPUT);
+  pinMode(front_left_2, OUTPUT);
+  pinMode(front_right_enable, OUTPUT);
+  pinMode(front_right_1, OUTPUT);
+  pinMode(front_right_2, OUTPUT);
+}
+
+void loop() {
+  int16_t ax, ay, az, gx, gy, gz;   // ax = acceleration X, ay = acceleration Y, az = acceleration Z, gx = gyro X, gy = gyro Y, gz = gyro Z
+  mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);   // This function reads all six measurements from the MPU6050 where the & symbol means store the value in that variable's memory location
+
+  // Calculate pitch
+  float pitch = atan2(ax, az) * 180 / PI;   // This converts acceleration data into tilt angle
+  Serial.print("Pitch: ");
+  Serial.println(pitch);
+
+  // Use adjustable cut angle for stopping motors
+  if (pitch < deadzoneCenter - cutAngle) {          // means the platform is tilted forward strongly
+    driveForward();
+  } 
+  else if (pitch > deadzoneCenter + cutAngle) {     // Means platform tilted backwards strongly 
+    driveBackward();
+  } 
+  else {                                            // Means the platform is flat
+    stopMotors();
+  }
+
+  // Optional: adjust cutAngle via Serial (if you want real-time tuning)
+  if (Serial.available() > 0) {
+    float val = Serial.parseFloat();
+    if (val >= 0) {
+      cutAngle = val;
+      Serial.print("New cut angle set: ");
+      Serial.println(cutAngle);
+    }
+  }
+
+  delay(50); // small delay to stabilize readings
+}
+
+// Motor control functions at full speed
+void driveForward() {   // This sets motor directions so the car moves forward
+  digitalWrite(back_left_1, LOW);
+  digitalWrite(back_left_2, HIGH);
+  digitalWrite(back_right_1, LOW);
+  digitalWrite(back_right_2, HIGH);
+  digitalWrite(front_left_1, HIGH);
+  digitalWrite(front_left_2, LOW);
+  digitalWrite(front_right_1, HIGH);
+  digitalWrite(front_right_2, LOW);
+
+  analogWrite(back_left_enable, 255);
+  analogWrite(back_right_enable, 255);
+  analogWrite(front_left_enable, 255);
+  analogWrite(front_right_enable, 255);
+}
+
+void driveBackward() {   // This sets motor directions so the car moves backward
+  digitalWrite(back_left_1, HIGH);
+  digitalWrite(back_left_2, LOW);
+  digitalWrite(back_right_1, HIGH);
+  digitalWrite(back_right_2, LOW);
+  digitalWrite(front_left_1, LOW);
+  digitalWrite(front_left_2, HIGH);
+  digitalWrite(front_right_1, LOW);
+  digitalWrite(front_right_2, HIGH);
+
+  analogWrite(back_left_enable, 255);
+  analogWrite(back_right_enable, 255);
+  analogWrite(front_left_enable, 255);
+  analogWrite(front_right_enable, 255);
+}
+
+void stopMotors() {
+  // Disable all motors completely
+  digitalWrite(back_left_1, LOW);
+  digitalWrite(back_left_2, LOW);
+  digitalWrite(back_right_1, LOW);
+  digitalWrite(back_right_2, LOW);
+  digitalWrite(front_left_1, LOW);
+  digitalWrite(front_left_2, LOW);
+  digitalWrite(front_right_1, LOW);
+  digitalWrite(front_right_2, LOW);
+}
+```
 
